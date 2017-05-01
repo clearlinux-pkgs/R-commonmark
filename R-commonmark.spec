@@ -4,7 +4,7 @@
 #
 Name     : R-commonmark
 Version  : 1.2
-Release  : 1
+Release  : 2
 URL      : https://cran.r-project.org/src/contrib/commonmark_1.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/commonmark_1.2.tar.gz
 Summary  : High Performance CommonMark and Github Markdown Rendering in R
@@ -32,11 +32,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1493663783
+export SOURCE_DATE_EPOCH=1493664211
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1493663783
+export SOURCE_DATE_EPOCH=1493664211
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
