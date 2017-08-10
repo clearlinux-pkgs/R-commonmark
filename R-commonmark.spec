@@ -4,7 +4,7 @@
 #
 Name     : R-commonmark
 Version  : 1.2
-Release  : 7
+Release  : 8
 URL      : https://cran.r-project.org/src/contrib/commonmark_1.2.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/commonmark_1.2.tar.gz
 Summary  : High Performance CommonMark and Github Markdown Rendering in R
@@ -14,7 +14,11 @@ Requires: R-commonmark-lib
 BuildRequires : clr-R-helpers
 
 %description
-No detailed description available
+syntax. This package uses the 'cmark' reference implementation for converting
+    markdown text into various formats including html, latex and groff man. In
+    addition it exposes the markdown parse tree in xml format. The latest version of
+    this package also adds support for Github extensions including tables, autolinks
+    and strikethrough text.
 
 %package lib
 Summary: lib components for the R-commonmark package.
@@ -32,11 +36,11 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1496604996
+export SOURCE_DATE_EPOCH=1502397931
 
 %install
 rm -rf %{buildroot}
-export SOURCE_DATE_EPOCH=1496604996
+export SOURCE_DATE_EPOCH=1502397931
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
