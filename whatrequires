@@ -1,0 +1,12 @@
+# This file contains recursive sources that require this package
+R-NMF
+R-RcppProgress
+R-devtools
+R-doRNG
+R-modelr
+R-pkgmaker
+R-reprex
+R-rngtools
+R-roxygen2
+R-rstanarm
+R-tidyverse
