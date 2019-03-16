@@ -4,15 +4,13 @@
 #
 Name     : R-commonmark
 Version  : 1.7
-Release  : 30
+Release  : 31
 URL      : https://cran.r-project.org/src/contrib/commonmark_1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/commonmark_1.7.tar.gz
 Summary  : High Performance CommonMark and Github Markdown Rendering in R
 Group    : Development/Tools
 License  : BSD-2-Clause
 Requires: R-commonmark-lib = %{version}-%{release}
-Requires: R-rlang
-Requires: R-xml2
 BuildRequires : R-rlang
 BuildRequires : R-xml2
 BuildRequires : buildreq-R
@@ -39,10 +37,10 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C
-export SOURCE_DATE_EPOCH=1543767907
+export SOURCE_DATE_EPOCH=1552729929
 
 %install
-export SOURCE_DATE_EPOCH=1543767907
+export SOURCE_DATE_EPOCH=1552729929
 rm -rf %{buildroot}
 export LANG=C
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -78,8 +76,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc -l %{buildroot}/usr/lib64/R/library commonmark|| : 
-cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
+R CMD check --no-manual --no-examples --no-codoc  commonmark || :
 
 
 %files
@@ -105,7 +102,8 @@ cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 /usr/lib64/R/library/commonmark/help/paths.rds
 /usr/lib64/R/library/commonmark/html/00Index.html
 /usr/lib64/R/library/commonmark/html/R.css
-/usr/lib64/R/library/commonmark/libs/symbols.rds
+/usr/lib64/R/library/commonmark/tests/testthat.R
+/usr/lib64/R/library/commonmark/tests/testthat/test-extensions.R
 
 %files lib
 %defattr(-,root,root,-)
