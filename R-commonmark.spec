@@ -4,7 +4,7 @@
 #
 Name     : R-commonmark
 Version  : 1.7
-Release  : 37
+Release  : 38
 URL      : https://cran.r-project.org/src/contrib/commonmark_1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/commonmark_1.7.tar.gz
 Summary  : High Performance CommonMark and Github Markdown Rendering in R
@@ -14,6 +14,7 @@ Requires: R-commonmark-lib = %{version}-%{release}
 BuildRequires : R-rlang
 BuildRequires : R-xml2
 BuildRequires : buildreq-R
+BuildRequires : util-linux
 
 %description
 syntax. This package uses the 'cmark' reference implementation for converting
@@ -36,13 +37,13 @@ lib components for the R-commonmark package.
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
-export LANG=C
-export SOURCE_DATE_EPOCH=1552729929
+export LANG=C.UTF-8
+export SOURCE_DATE_EPOCH=1571812355
 
 %install
-export SOURCE_DATE_EPOCH=1552729929
+export SOURCE_DATE_EPOCH=1571812355
 rm -rf %{buildroot}
-export LANG=C
+export LANG=C.UTF-8
 export CFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FCFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
 export FFLAGS="$CFLAGS -O3 -flto -fno-semantic-interposition "
@@ -71,12 +72,12 @@ R CMD INSTALL --preclean --install-tests --built-timestamp=${SOURCE_DATE_EPOCH} 
 cp ~/.stash/* %{buildroot}/usr/lib64/R/library/*/libs/ || :
 %{__rm} -rf %{buildroot}%{_datadir}/R/library/R.css
 %check
-export LANG=C
+export LANG=C.UTF-8
 export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export _R_CHECK_FORCE_SUGGESTS_=false
-R CMD check --no-manual --no-examples --no-codoc  commonmark || :
+R CMD check --no-manual --no-examples --no-codoc commonmark || :
 
 
 %files
