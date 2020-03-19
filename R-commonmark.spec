@@ -4,7 +4,7 @@
 #
 Name     : R-commonmark
 Version  : 1.7
-Release  : 40
+Release  : 41
 URL      : https://cran.r-project.org/src/contrib/commonmark_1.7.tar.gz
 Source0  : https://cran.r-project.org/src/contrib/commonmark_1.7.tar.gz
 Summary  : High Performance CommonMark and Github Markdown Rendering in R
