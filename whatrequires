@@ -1,4 +1,5 @@
 # This file contains recursive sources that require this package
+R-markdown
 R-roxygen2
 R-shiny
 R-spelling
